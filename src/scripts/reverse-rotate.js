@@ -17,19 +17,17 @@ module.exports = function(str, sz) {
 
       isDivisibleByTwo = sumCubes % 2 === 0,
 
-      reverse = function() {
-        chunk.reverse();
+      reverse = function(s) {
+        return s.reverse();
       },
 
-      rotate = function() {
-        chunk = chunk.concat(chunk.shift());
+      rotate = function(s) {
+        return s.concat(s.shift());
       },
 
       action = isDivisibleByTwo ? reverse : rotate;
 
-    action();
-
-    chunks.push(chunk.join(''));
+    chunks.push(action(chunk.slice(0)).join(''))
     return doRevRot(elms, --chunkNums, chunks);
   };
 
