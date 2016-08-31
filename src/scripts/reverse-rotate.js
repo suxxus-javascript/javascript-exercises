@@ -27,11 +27,12 @@ module.exports = function(str, sz) {
 
       action = isDivisibleByTwo ? reverse : rotate;
 
-    chunks.push(action(chunk.slice(0)).join(''))
+    chunks.push(action(chunk.slice(0)).join(''));
     return doRevRot(elms, --chunkNums, chunks);
   };
 
-  var nunberOfChunks = Math.floor(str.length / sz);
-  return doRevRot(str.split(''),
-    nunberOfChunks === Infinity || isNaN(nunberOfChunks) ? 0 : nunberOfChunks, []).join('');
+
+  var nunberOfChunks = sz < 1 || str.length < sz ? 0 : Math.floor(str.length / sz);
+
+  return doRevRot(str.split(''), nunberOfChunks, []).join('');
 };
