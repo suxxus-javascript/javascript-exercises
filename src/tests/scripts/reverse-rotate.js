@@ -6,11 +6,15 @@ var reverseRotate = require('scripts/reverse-rotate');
 test('return chunks', function(t) {
   var actual, expect;
 
-  actual = reverseRotate('123456987654', 0);
+  actual = reverseRotate('1234', 0);
   expect = '';
   t.deepEqual(actual, expect);
 
   actual = reverseRotate('654', 4);
+  expect = '';
+  t.deepEqual(actual, expect);
+
+  actual = reverseRotate('', 0);
   expect = '';
   t.deepEqual(actual, expect);
 
