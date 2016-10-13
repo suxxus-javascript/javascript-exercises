@@ -2,21 +2,33 @@
 
 module.exports = function() {
 
-  var args = [].slice.call(arguments);
+    var args = [].slice.call(arguments);
 
-  var len = args.reduce(function(acc, val) {
-    return Math.max(acc, val.length);
-  }, 0);
+    var longest = args.reduce(function(acc, val) {
+        return Math.max(acc, val.length);
+    }, 0);
 
-  var arr = new Array(len);
-  var acc = [];
+    var len = args.length;
 
-  arr.fill(true).forEach(function(item, idx) {
-    args.forEach(function(val) {
-      if (val[idx]) {
-        acc.push(val[idx]);
-      }
-    });
-  });
-  return acc;
+    var i = 0;
+    var j = 0;
+    var combined = [];
+
+
+    while (i < longest) {
+
+        while (j < len) {
+
+            if (args[j][i]) {
+                combined.push(args[j][i]);
+            }
+
+            j += 1;
+        }
+
+        j = 0;
+        i += 1;
+    }
+
+    return combined;
 };
