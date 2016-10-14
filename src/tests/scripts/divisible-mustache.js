@@ -5,7 +5,7 @@
 // The answers should be as follows:
 // If the number is divisible by three, you should return "beard"
 // If the number is divisible by five, you should return "mustache"
-// If the number is divisible by tree and five, you should return "beard mustache"
+// If the number is divisible by three and five, you should return "beard mustache"
 // Otherwise you should return the number as a string.
 
 'use strict';
