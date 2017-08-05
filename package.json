@@ -9,7 +9,7 @@
   "license": "ISC",
   "description": "katas exercises tests",
   "scripts": {
-    "lint": "eslint --color  src || true",
+    "lint": "eslint --color --fix  src || true",
     "test": "NODE_PATH=src tape src/tests | tap-colorize",
     "dev": "watch -p 'src/**/*.js' -c 'npm test & npm run lint'",
     "check": "npm outdated --depth=0",
