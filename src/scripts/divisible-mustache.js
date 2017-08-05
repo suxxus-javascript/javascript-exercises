@@ -8,12 +8,8 @@
 // Otherwise you should return the number as a string.
 
 'use strict';
-module.exports = function(words, number) {
-  return (function(value) {
-    return value.length === 0 ? String(number) : value.join(' ');
-  }(
-    Object.keys(words).reduce(function(acc, value) {
-      return ((number % value) === 0) ? acc.concat(words[value]) : acc;
-    }, [])
+module.exports = (words, number) =>
+  ((value) =>
+    value.length === 0 ? String(number) : value.join(' '))(Object.keys(words).reduce((acc, value) =>
+    ((number % value) === 0) ? acc.concat(words[value]) : acc, []
   ));
-};
