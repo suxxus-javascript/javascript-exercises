@@ -1,10 +1,9 @@
-'use strict';
+const test = require('tape');
+const reverseRotate = require('scripts/reverse-rotate');
 
-var test = require('tape');
-var reverseRotate = require('scripts/reverse-rotate');
-
-test('return chunks', function(t) {
-  var actual, expect;
+test('return chunks', (t) => {
+  let actual,
+    expect;
 
   actual = reverseRotate('1234', 0);
   expect = '';
@@ -37,6 +36,6 @@ test('return chunks', function(t) {
   t.end();
 });
 
-test('---- end test ----', function(t) {
+test('---- end test ----', (t) => {
   t.end();
 });

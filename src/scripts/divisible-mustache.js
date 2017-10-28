@@ -7,9 +7,8 @@
 // If the number is divisible by tree and five, you should return "beard mustache"
 // Otherwise you should return the number as a string.
 
-'use strict';
+
 module.exports = (words, number) =>
-  ((value) =>
-    value.length === 0 ? String(number) : value.join(' '))(Object.keys(words).reduce((acc, value) =>
-    ((number % value) === 0) ? acc.concat(words[value]) : acc, []
-  ));
+  (value =>
+    (value.length === 0 ? String(number) : value.join(' ')))(Object.keys(words).reduce((acc, value) =>
+    (((number % value) === 0) ? acc.concat(words[value]) : acc), []));

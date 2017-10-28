@@ -1,11 +1,11 @@
-'use strict';
 
-var test = require('tape');
-var validParenthesess = require('scripts/valid-parenthesess');
 
-test('validParenthesess', function(t) {
+const test = require('tape');
+const validParenthesess = require('scripts/valid-parenthesess');
 
-  var actual, expect;
+test('validParenthesess', (t) => {
+  let actual,
+    expect;
 
   actual = validParenthesess('()');
   expect = true;
@@ -22,6 +22,6 @@ test('validParenthesess', function(t) {
   t.end();
 });
 
-test('---- end test ----', function(t) {
-    t.end();
+test('---- end test ----', (t) => {
+  t.end();
 });

@@ -1,27 +1,23 @@
-'use strict';
+
 // http://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/train/javascript
 
-module.exports = function(str, sz) {
-
-  var doRevRot = function(elms, chunkNums, chunks) {
-
+module.exports = function (str, sz) {
+  var doRevRot = function (elms, chunkNums, chunks) {
     if (chunkNums <= 0) {
       return chunks;
     }
 
-    var chunk = elms.splice(0, sz),
+    let chunk = elms.splice(0, sz),
 
-      sumCubes = chunk.reduce(function(acc, val) {
-        return acc + Math.pow(val, 3);
-      }, 0),
+      sumCubes = chunk.reduce((acc, val) => acc + Math.pow(val, 3), 0),
 
       isDivisibleByTwo = sumCubes % 2 === 0,
 
-      reverse = function(s) {
+      reverse = function (s) {
         return s.reverse();
       },
 
-      rotate = function(s) {
+      rotate = function (s) {
         return s.concat(s.shift());
       },
 
@@ -32,7 +28,7 @@ module.exports = function(str, sz) {
   };
 
 
-  var nunberOfChunks = sz < 1 || str.length < sz ? 0 : Math.floor(str.length / sz);
+  const nunberOfChunks = sz < 1 || str.length < sz ? 0 : Math.floor(str.length / sz);
 
   return doRevRot(str.split(''), nunberOfChunks, []).join('');
 };

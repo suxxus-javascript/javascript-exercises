@@ -35,6 +35,7 @@
     "javascript"
   ],
   "dependencies": {
+    "lodash": "4.17.4",
     "tape": "4.8.0"
   }
 }

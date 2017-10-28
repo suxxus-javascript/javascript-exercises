@@ -1,8 +1,6 @@
-'use strict';
-String.prototype.spacify = function() {
+
+String.prototype.spacify = function () {
   return this.split('')
-    .filter(function(e) {
-      return e !== ' ';
-    })
+    .filter(e => e !== ' ')
     .join(' ');
 };

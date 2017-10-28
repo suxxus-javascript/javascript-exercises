@@ -1,15 +1,12 @@
-'use strict';
 
-module.exports = function() {
 
-  var args = [].slice.call(arguments);
-  var longest = args.reduce(function(acc, val) {
-    return Math.max(acc, val.length);
-  }, 0);
-  var len = args.length;
-  var i = 0;
-  var j = 0;
-  var combined = [];
+module.exports = function () {
+  const args = [].slice.call(arguments);
+  const longest = args.reduce((acc, val) => Math.max(acc, val.length), 0);
+  const len = args.length;
+  let i = 0;
+  let j = 0;
+  const combined = [];
 
   while (i < longest) {
     while (j < len) {
