@@ -7,7 +7,7 @@
 // If the number is divisible by tree and five, you should return "beard mustache"
 // Otherwise you should return the number as a string.
 
-
+// (Record<number, string>, number) => string
 module.exports = (words, number) =>
   (value =>
     (value.length === 0 ? String(number) : value.join(' ')))(Object.keys(words).reduce((acc, value) =>
